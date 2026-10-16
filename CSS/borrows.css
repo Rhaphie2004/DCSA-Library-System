@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f3f6fa;
+    color: #800000;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: #800000;
+    padding: 25px 15px;
+    color: white;
+    overflow-y: auto;
+    text-align: center;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+}
+
+/* DCSA LOGO */
+.sidebar img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto 18px;
+}
+
+/* LIBRARY SYSTEM TITLE */
+.sidebar h2 {
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 28px;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 13px 12px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: left;
+    font-size: 14px;
+    transition: background 0.25s ease, padding-left 0.25s ease;
+}
+
+/* HOVER AND ACTIVE LINK */
+.sidebar a:hover,
+.sidebar a.active {
+    background: #a52a2a;
+    padding-left: 18px;
+}
+
+/* ACTIVE LINK INDICATOR */
+.sidebar a.active {
+    border-left: 4px solid #ffffff;
+    font-weight: bold;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main {
+    margin-left: 240px;
+    padding: 35px;
+    min-width: 0;
+}
+
+.main h1 {
+    margin-bottom: 10px;
+    color: #17365d;
+}
+
+.main > p {
+    color: #718096;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.student-form { 
+    margin-bottom: 20px;
+}
+
+.search-box {
+    max-width: 350px;
+    margin-bottom: 15px;
+}
+
+.search-box input {
+    width: 100%;
+}
+
+.student-list {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    border: 1px solid #e1e7ef;
+}
+
+/* =========================
+   DASHBOARD CARDS
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 18px;
+    margin: 25px 0;
+}
+
+.card,
+.panel {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 10px;
+    border: 1px solid #e1e7ef;
+    box-shadow: 0 3px 10px rgba(23, 54, 93, 0.04);
+}
+
+.card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.card h2 {
+    color: #245b91;
+    font-size: 28px;
+}
+
+.module {
+    text-decoration: none;
+    color: #263445;
+    transition: 0.2s;
+}
+
+.module:hover {
+    transform: translateY(-3px);
+    border-color: #245b91;
+}
+
+.module p {
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.section-title {
+    margin-top: 35px;
+}
+
+.panel {
+    margin-top: 25px;
+}
+
+.panel h2 {
+    margin-bottom: 22px;
+    color: #17365d;
+    font-size: 20px;
+}
+
+/* =========================
+   FORMS
+========================= */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #334155;
+}
+
+input,
+select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #ccd5e0;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #263445;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #245b91;
+    box-shadow: 0 0 0 3px rgba(36, 91, 145, 0.12);
+}
+
+/* Automatically filled student information */
+#borrowForm input[readonly] {
+    background: #f1f5f9;
+    color: #475569;
+    cursor: default;
+}
+
+/* Student lookup message */
+#studentMessage {
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* =========================
+   GENERAL BUTTONS
+========================= */
+
+.btn,
+#borrowForm button,
+.form-actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 20px;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #245b91;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s,
+                box-shadow 0.2s;
+}
+
+.btn:hover,
+#borrowForm button:hover,
+.form-actions button:hover {
+    background: #173f6b;
+    box-shadow: 0 3px 8px rgba(23, 54, 93, 0.15);
+    transform: translateY(-1px);
+}
+
+.btn:focus-visible,
+button:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 2px;
+}
+
+.secondary {
+    background: #e2e8f0;
+    color: #263445;
+}
+
+.secondary:hover {
+    background: #cbd5e1;
+    color: #263445;
+}
+
+/* Borrow form buttons */
+#borrowForm button[type="submit"] {
+    background: #800000;
+    color: #ffffff;
+}
+
+#borrowForm button[type="submit"]:hover {
+    background: #a52a2a;
+}
+
+#borrowForm button[type="reset"] {
+    background: #e2e8f0;
+    color: #263445;
+}
+
+#borrowForm button[type="reset"]:hover {
+    background: #cbd5e1;
+}
+
+/* Form button layout */
+.form-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.form-actions .btn,
+.form-actions button {
+    margin-top: 20px;
+}
+
+/* =========================
+   BACK LINK
+========================= */
+.back {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #245b91;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back:hover {
+    color: #17365d;
+    text-decoration: underline;
+}
+
+/* =========================
+   TABLE CONTAINER
+========================= */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+    border-radius: 9px;
+    background: #ffffff;
+    border: 1px solid #e1e7ef;
+}
+
+.book-table,
+#borrowTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 0;
+    background: #ffffff;
+    text-align: left;
+}
+
+/* Minimum width keeps columns readable */
+.book-table {
+    min-width: 600px;
+}
+
+#borrowTable {
+    min-width: 1100px;
+}
+
+/* Table headers */
+.book-table th,
+#borrowTable th {
+    background: #17365d;
+    color: #ffffff;
+    padding: 14px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: 2px solid #245b91;
+}
+
+/* Table data cells */
+.book-table td,
+#borrowTable td {
+    padding: 13px 12px;
+    border-bottom: 1px solid #e8edf3;
+    color: #334155;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+/* Alternating row colors */
+.book-table tbody tr:nth-child(even),
+#borrowTable tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+/* Hover effect */
+.book-table tbody tr:hover,
+#borrowTable tbody tr:hover {
+    background: #eef5ff;
+    transition: background 0.2s ease;
+}

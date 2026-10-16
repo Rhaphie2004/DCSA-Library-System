@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Management - Library System</title>
+    <link rel="stylesheet" href="/CSS/books.css">
+    <link rel="shortcut icon" href="/dcsa.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <img src="/dcsa.png" alt="DCSA Logo">
+        <h2>DATAMEX COLLEGE OF SAINT ADELINE LIBRARY SYSTEM</h2>
+        <a href="homepage.html">Home</a>
+        <a href="students.html">Student Management</a>
+        <a class="active" href="Books.html">Book Management</a>
+        <a href="borrow.html">Borrow Books</a>
+        <!-- <a href="library records.html">Library Records</a> -->
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+        <h1>Book Management</h1>
+        <p>Add, edit, search, and manage library books.</p>
+
+        <!-- Add Book Form -->
+        <section class="panel">
+            <h2 id="form-title">Add New Book</h2>
+
+            <form id="bookForm">
+                <div class="form-grid">
+
+                    <div>
+                        <label for="bookId">Book ID <span style="color: red;">*</span></label>
+                        <input type="text" id="bookId" placeholder="e.g. BK001" required>
+                    </div>
+
+                    <div>
+                        <label for="bookTitle">Book Title <span style="color: red;">*</span></label>
+                        <input type="text" id="bookTitle" placeholder="Enter book title" required>
+                    </div>
+
+                    <div>
+                        <label for="author">Author <span style="color: red;">*</span></label>
+                        <input type="text" id="author" placeholder="Enter author name" required>
+                    </div>
+
+                    <div>
+                        <label for="publishedDate">Published Date </label>
+                        <input type="date" id="publishedDate">
+                    </div>
+
+                    <div>
+                        <label for="quantity">Book Quantity </label>
+                        <input type="number" pattern="[0-9]{10}" id="bookQuantity">
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn" id="saveBtn">
+                        Add Book
+                    </button>
+
+                    <button type="reset" class="btn secondary" id="clearBtn">
+                        Clear Form
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Book List Table -->
+        <section class="panel">
+            <h2>Book List</h2>
+
+            <div class="search-box">
+                <input type="search" id="searchInput" placeholder="Search by ID, title, author, or date..."
+                    aria-label="Search books">
+            </div>
+
+            <div class="table-container">
+                <table class="book-table">
+                    <thead>
+                        <tr>
+                            <th>Book ID</th>
+                            <th>Book Title</th>
+                            <th>Author</th>
+                            <th>Published Date</th>
+                            <th>Book Quantity</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="bookTableBody">
+                        <tr>
+                            <td colspan="5" class="empty-message">
+                                No books added yet.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+    <script src="/JS/books.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow Books - Library System</title>
+    <link rel="stylesheet" href="/CSS/borrows.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <img src="/dcsa.png" alt="DCSA Logo">
+        <h2>DATAMEX COLLEGE OF SAINT ADELINE LIBRARY SYSTEM</h2>
+        <a href="homepage.html">Home</a>
+        <a href="students.html">Student Management</a>
+        <a href="Books.html">Book Management</a>
+        <a class="active" href="borrow.html">Borrow Books</a>
+        <!-- <a href="library records.html">Library Records</a> -->
+    </aside>
+
+    <main class="main">
+        <h1 style="color:#800000;;">Borrow Books Information</h1>
+        <p>Register book borrowing transactions and monitor due dates.</p>
+
+        <section class="student-form">
+            <form id="borrowForm">
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="lrn">Student LRN</label>
+                        <input type="text" id="lrn" placeholder="Enter student LRN" required>
+                        <small id="studentMessage"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" readonly required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact">Contact Number</label>
+                        <input type="text" id="contact" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" readonly>
+                    </div>
+
+
+                    <div>
+                        <label for="bookId">Book ID</label>
+                        <select id="bookId" name="bookId" required>
+                            <option value="">Select Book ID</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="bookTitle">Book Title</label>
+                        <input type="text" id="bookTitle" name="bookTitle" placeholder="Automatically filled" readonly
+                            required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="checkoutDate">Checkout Date</label>
+                        <input type="date" id="checkoutDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dueDate">Due Date</label>
+                        <input type="date" id="dueDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="grade">Grade Level</label>
+                        <input type="text" id="grade" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="strand">Strand / Course</label>
+                        <input type="text" id="strand" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="yearLevel">Year Level</label>
+                        <input type="text" id="yearLevel" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="section">Section</label>
+                        <input type="text" id="section" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="overdueDays">Overdue Days</label>
+                        <input type="number" id="overdueDays" value="0" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="returnStatus">Return Status</label>
+                        <select id="returnStatus" required>
+                            <option value="Borrowed">Borrowed</option>
+                            <option value="Returned">Returned</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" id="borrowSubmit">
+                        Save Borrowing Record
+                    </button>
+
+                    <button type="reset" id="borrowReset">
+                        Clear Form
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="student-list">
+            <h2 style="margin-bottom: 20px;">Borrowing Records</h2>
+            <div class="search-box">
+                <input type="search" id="searchBorrow" placeholder="Search LRN, student, book, or status...">
+            </div>
+
+            <div class="table-container">
+                <table class="borrowTable">
+                    <thead>
+                        <tr>
+                            <th>LRN</th>
+                            <th>Full Name</th>
+                            <th>Book ID</th>
+                            <th>Book Title</th>
+                            <th>Checkout Date</th>
+                            <th>Due Date</th>
+                            <th>Grade / Course</th>
+                            <th>Section</th>
+                            <th>Overdue Days</th>
+                            <th>Return Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="bookTableBody">
+                        <tr>
+                            <td colspan="5" class="empty-message">
+                                No books added yet.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="/JS/borrows.js"></script>
+</body>
+
+</html>
